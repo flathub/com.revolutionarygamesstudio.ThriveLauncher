@@ -50,13 +50,15 @@ modules:
       - squashfs-root
     sources:
       - type: file
-        url: https://github.com/Revolutionary-Games/Thrive-Launcher/releases/download/v1.3.1/Thrive-Launcher-1.3.1.AppImage 
-        sha256: b63529154c5e7f29f2a92c206b692fa3de1b50364a9689f8a44f2eb5845b53e1
+        url: https://github.com/Revolutionary-Games/Thrive-Launcher/releases/download/v1.3.2/Thrive-Launcher-1.3.2.AppImage
+        sha256: 5b849209c84a5ca2e9d85086bd373ab7373e0505fe5a2c2f001fffa75b6e51d8
+        dest-filename: Thrive-Launcher.AppImage
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Revolutionary-Games/Thrive-Launcher/releases/latest
-          version-query: ".tag_name | sub(\"^v\"; \"\")"
-          url-query: ".assets[] | select(.name==\"Thrive-Launcher-\" + $version + \".AppImage\") | .browser_download_url"
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="Thrive-Launcher-" + $version + ".AppImage")
+            | .browser_download_url
 
       - type: script
         dest-filename: thrivelauncher
@@ -68,9 +70,9 @@ modules:
 
     build-commands:
       #Launcher script
-      - install -t ${FLATPAK_DEST}/bin thrivelauncher 
+      - install -t ${FLATPAK_DEST}/bin thrivelauncher
       # Extract launcher
-      - unappimage Thrive-Launcher-1.3.1.AppImage
+      - unappimage Thrive-Launcher.AppImage
       # Install launcher
       - mkdir -p /app/bin/image
       - cp -r squashfs-root/* /app/bin/image/
@@ -80,6 +82,6 @@ modules:
       # Install desktop file
       - install -Dm644 squashfs-root/thrive-launcher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - desktop-file-edit --set-key="Exec" --set-value="thrivelauncher" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
-      - desktop-file-edit --set-key="Name" --set-value="Thrive" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"      
+      - desktop-file-edit --set-key="Name" --set-value="Thrive" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       # Install app data
       - install -Dm644 com.revolutionarygamesstudio.ThriveLauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
