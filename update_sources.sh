@@ -7,7 +7,9 @@
     cd Thrive-Launcher
     # Make sure all submodules are cloned and build works
     dotnet build ThriveLauncher.sln
-    python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json ThriveLauncher/ThriveLauncher.csproj --runtime linux-x64
+    # We use the whole solution here to make sure the scripts can also run when building
+    python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json ThriveLauncher.sln --runtime linux-x64
+    # python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json ThriveLauncher/ThriveLauncher.csproj --runtime linux-x64
 
     # Optional test to see if the launcher works locally, if it
     # doesn't then bad backages probably got written. To resolve the
