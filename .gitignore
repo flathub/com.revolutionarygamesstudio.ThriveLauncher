@@ -1,4 +1,5 @@
 build/
+build-dir/
 *.AppImage
 squashfs-root/
 .flatpak-builder/
