@@ -21,10 +21,6 @@ modules:
       # no-debuginfo-compression: true
       strip: false
       append-path: "/run/build/thrive-launcher/dotnet-sdk"
-      # arch:
-      #   x86_64:
-      #     env:
-      #       RUNTIME: linux-x64
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: "true"
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
