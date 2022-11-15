@@ -17,6 +17,8 @@ modules:
   - name: thrive-launcher
     buildsystem: simple
     build-options:
+      finish-args:
+        - --share=network
       no-debuginfo: true
       # no-debuginfo-compression: true
       strip: false
