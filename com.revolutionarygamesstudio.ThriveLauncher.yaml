@@ -71,7 +71,7 @@ modules:
 
       # When building on Flathub, this is required
       # https://github.com/flatpak/flatpak-builder/issues/463
-      - which git-lfs
+#      - which git-lfs
 #      - git-lfs pull
       # This tries to detect if the lfs pull has been performed or not
       - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
