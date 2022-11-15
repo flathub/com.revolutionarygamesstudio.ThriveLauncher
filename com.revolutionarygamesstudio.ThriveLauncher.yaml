@@ -24,21 +24,21 @@ build-options:
       PKG_CONFIG_PATH: "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet6/lib/pkgconfig"
 
 modules:
-  - name: git-lfs
-    buildsystem: simple
-    build-commands:
-      - PREFIX=${FLATPAK_DEST} ./install.sh
-    sources:
-      - type: archive
-        strip-components: 1
-        only-arches: [x86_64]
-        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
-        sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-          version-query: ".tag_name | sub(\"^[vV]\";\"\")"
-          url-query: ".assets[] | select(.label==\"Source\") | .browser_download_url"
+#  - name: git-lfs
+#    buildsystem: simple
+#    build-commands:
+#      - PREFIX=${FLATPAK_DEST} ./install.sh
+#    sources:
+#      - type: archive
+#        strip-components: 1
+#        only-arches: [x86_64]
+#        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
+#        sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
+#        x-checker-data:
+#          type: json
+#          url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
+#          version-query: ".tag_name | sub(\"^[vV]\";\"\")"
+#          url-query: ".assets[] | select(.label==\"Source\") | .browser_download_url"
 
   - name: dotnet
     buildsystem: simple
@@ -59,7 +59,6 @@ modules:
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
         commit: 9af0a4c8cf14d18c45e6fd1461b1c730ad2534fd
-       disable-shallow-clone: true
 
       - nuget_sources.json
 
