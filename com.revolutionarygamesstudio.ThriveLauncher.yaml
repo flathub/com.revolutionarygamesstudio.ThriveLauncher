@@ -43,10 +43,9 @@ modules:
     build-commands:
       # Sanity check making sure the dotnet-sdk install works
       - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
-      # Running git lfs pull doesn't work because it seems LFS is not installed.
-      # But the builder seems to restore LFS files anyway before starting our code
+      # When building on Flathub, this is required
       # https://github.com/flatpak/flatpak-builder/issues/463
-      # - git lfs pull
+      - git lfs pull
       # This tries to detect if the lfs pull has been performed or not
       - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
