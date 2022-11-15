@@ -3,3 +3,4 @@ build-dir/
 *.AppImage
 squashfs-root/
 .flatpak-builder/
+/Thrive-Launcher
