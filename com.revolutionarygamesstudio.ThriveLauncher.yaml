@@ -59,6 +59,7 @@ modules:
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
         commit: 9af0a4c8cf14d18c45e6fd1461b1c730ad2534fd
+       disable-shallow-clone: true
 
       - nuget_sources.json
 
