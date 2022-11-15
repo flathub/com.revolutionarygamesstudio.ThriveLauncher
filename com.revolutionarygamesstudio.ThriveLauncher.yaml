@@ -20,13 +20,19 @@ modules:
       no-debuginfo: true
       # no-debuginfo-compression: true
       strip: false
-      append-path: "/run/build/thrive-launcher/dotnet-sdk"
+      append-path: "/run/build/thrive-launcher/dotnet-sdk:/run/build/thrive-launcher/git-lfs"
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: "true"
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
     # cleanup:
     #   - squashfs-root
     sources:
+      - type: archive
+        dest: git-lfs
+        only-arches:
+          - x86_64
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
+        sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
         commit: 9af0a4c8cf14d18c45e6fd1461b1c730ad2534fd
@@ -45,7 +51,7 @@ modules:
       - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
       # When building on Flathub, this is required
       # https://github.com/flatpak/flatpak-builder/issues/463
-      - git lfs pull
+      - git-lfs pull
       # This tries to detect if the lfs pull has been performed or not
       - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
