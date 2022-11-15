@@ -24,8 +24,6 @@ modules:
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: "true"
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
-    # cleanup:
-    #   - squashfs-root
     sources:
       - type: archive
         dest: git-lfs
