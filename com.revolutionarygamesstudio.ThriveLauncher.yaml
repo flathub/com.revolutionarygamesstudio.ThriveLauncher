@@ -13,6 +13,16 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --share=ipc
+
+sdk-extensions:
+ - org.freedesktop.Sdk.Extension.dotnet6
+
+build-options:
+    append-path: "/usr/lib/sdk/dotnet6/bin"
+    append-ld-library-path: "/usr/lib/sdk/dotnet6/lib"
+    env:
+      PKG_CONFIG_PATH: "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet6/lib/pkgconfig"
+
 modules:
 #  - name: git-lfs
 #    buildsystem: simple
@@ -30,28 +40,25 @@ modules:
 #          version-query: ".tag_name | sub(\"^[vV]\";\"\")"
 #          url-query: ".assets[] | select(.label==\"Source\") | .browser_download_url"
 
+  - name: dotnet
+    buildsystem: simple
+    build-commands:
+      - install.sh
+      - install-sdk.sh
+
   - name: thrive-launcher
     buildsystem: simple
     build-options:
       no-debuginfo: true
       # no-debuginfo-compression: true
       strip: false
-      append-path: "/run/build/thrive-launcher/dotnet-sdk:/run/build/thrive-launcher/git-lfs"
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: "true"
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
     sources:
-
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
         commit: 9af0a4c8cf14d18c45e6fd1461b1c730ad2534fd
-
-      - type: archive
-        dest: dotnet-sdk
-        only-arches:
-          - x86_64
-        url: https://download.visualstudio.microsoft.com/download/pr/1d2007d3-da35-48ad-80cc-a39cbc726908/1f3555baa8b14c3327bb4eaa570d7d07/dotnet-sdk-6.0.403-linux-x64.tar.gz
-        sha512: 779b3e24a889dbb517e5ff5359dab45dd3296160e4cb5592e6e41ea15cbf87279f08405febf07517aa02351f953b603e59648550a096eefcb0a20fdaf03fadde
 
       - nuget_sources.json
 
@@ -61,16 +68,20 @@ modules:
     build-commands:
       # Sanity check making sure the dotnet-sdk install works
       - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
+
       # When building on Flathub, this is required
       # https://github.com/flatpak/flatpak-builder/issues/463
 #      - which git-lfs
 #      - git-lfs pull
       # This tries to detect if the lfs pull has been performed or not
       - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
+
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
       - dotnet build Scripts --source nuget-sources
+
       # Build and install the launcher
       - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --output /app/bin --output-without-subfolders --nuget-source nuget-sources
+
       # Icon files for the .desktop file
       - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
       - install -Dm644 ThriveLauncher/Assets/Icons/48x48.png "/app/share/icons/hicolor/48x48/apps/thrive-launcher-icon.png"
