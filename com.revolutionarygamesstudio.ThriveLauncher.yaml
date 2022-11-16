@@ -66,6 +66,7 @@ modules:
         path: com.revolutionarygamesstudio.ThriveLauncher.appdata.xml
 
     build-commands:
+      - ls /usr/lib/sdk/dotnet6/
       # Sanity check making sure the dotnet-sdk install works
       - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
 
