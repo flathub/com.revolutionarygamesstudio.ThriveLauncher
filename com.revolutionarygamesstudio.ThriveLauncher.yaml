@@ -1,6 +1,6 @@
 app-id: com.revolutionarygamesstudio.ThriveLauncher
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 command: ThriveLauncher
 separate-locales: false
@@ -13,23 +13,8 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --share=ipc
-modules:
-#  - name: git-lfs
-#    buildsystem: simple
-#    build-commands:
-#      - PREFIX=${FLATPAK_DEST} ./install.sh
-#    sources:
-#      - type: archive
-#        strip-components: 1
-#        only-arches: [x86_64]
-#        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
-#        sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
-#        x-checker-data:
-#          type: json
-#          url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-#          version-query: ".tag_name | sub(\"^[vV]\";\"\")"
-#          url-query: ".assets[] | select(.label==\"Source\") | .browser_download_url"
 
+modules:
   - name: thrive-launcher
     buildsystem: simple
     build-options:
@@ -63,31 +48,34 @@ modules:
         path: com.revolutionarygamesstudio.ThriveLauncher.appdata.xml
 
     build-commands:
-      - ls -l /run/build/thrive-launcher/dotnet-sdk/
       # Sanity check making sure the dotnet-sdk install works
       - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
-      # When building on Flathub, this is required
-      # https://github.com/flatpak/flatpak-builder/issues/463
-#      - which git-lfs
-#      - git-lfs pull
+
       # This tries to detect if the lfs pull has been performed or not
       - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
+
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
       - dotnet build Scripts --source nuget-sources
+
       # Build and install the launcher
       - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --output /app/bin --output-without-subfolders --nuget-source nuget-sources
+
       # Icon files for the .desktop file
       - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
       - install -Dm644 ThriveLauncher/Assets/Icons/48x48.png "/app/share/icons/hicolor/48x48/apps/thrive-launcher-icon.png"
       - install -Dm644 ThriveLauncher/Assets/Icons/128x128.png "/app/share/icons/hicolor/128x128/apps/thrive-launcher-icon.png"
       - install -Dm644 ThriveLauncher/Assets/Icons/256x256.png "/app/share/icons/hicolor/256x256/apps/thrive-launcher-icon.png"
       - install -Dm644 ThriveLauncher/Assets/Icons/512x512.png "/app/share/icons/hicolor/512x512/apps/thrive-launcher-icon.png"
+
       # This big of an icon is disallowed
       # - install -Dm644 /app/bin/thrive-launcher-icon.png "/app/share/icons/hicolor/1024x1024/apps/thrive-launcher-icon.png"
       - rm -f /app/bin/thrive-launcher-icon.png
+
       # Install desktop file
       - install -Dm644 /app/bin/ThriveLauncher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+
       # - desktop-file-edit --set-key="Exec" --set-value="ThriveLauncher" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - desktop-file-edit --set-key="Name" --set-value="Thrive" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+
       # Install app data
       - install -Dm644 com.revolutionarygamesstudio.ThriveLauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
