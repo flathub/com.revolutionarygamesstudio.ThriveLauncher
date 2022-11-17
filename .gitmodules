@@ -1,7 +1,3 @@
 [submodule "flatpak-builder-tools"]
 	path = flatpak-builder-tools
 	url = https://github.com/flatpak/flatpak-builder-tools.git
-[submodule "Thrive-Launcher"]
-	path = Thrive-Launcher
-	url = https://github.com/Revolutionary-Games/Thrive-Launcher.git
-	branch = cb227a69a8ef5152ea2642ca5fe6cff6557791e7
