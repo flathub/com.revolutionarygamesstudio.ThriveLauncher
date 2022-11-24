@@ -58,7 +58,7 @@ modules:
       - dotnet build Scripts --source nuget-sources
 
       # Build and install the launcher
-      - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --output /app/bin --output-without-subfolders --nuget-source nuget-sources
+      - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --type Flatpak --output /app/bin --output-without-subfolders --nuget-source nuget-sources
 
       # Icon files for the .desktop file
       - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
