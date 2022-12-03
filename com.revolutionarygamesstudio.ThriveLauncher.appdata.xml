@@ -90,7 +90,7 @@
 				<ul>
 				<li>Reimplemented the launcher in C# using the Avalonia framework. This is a huge change so please let us know of any new bugs introduced because of this.</li>
 				<li>Various features have been slightly improved in usability</li>
-                <li>RC versions (beta) are now available through the launcher</li>
+				<li>RC versions (beta) are now available through the launcher</li>
 				<li>Many bugs related to Electron should no longer happen</li>
 				<li>Electron security vulnerabilities are no longer relevant</li>
 				</ul>
