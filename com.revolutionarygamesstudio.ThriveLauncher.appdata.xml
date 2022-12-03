@@ -83,6 +83,19 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.0.0" date="2022-12-03">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.0</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Reimplemented the launcher in C# using the Avalonia framework. This is a huge change so please let us know of any new bugs introduced because of this.</li>
+				<li>Various features have been slightly improved in usability</li>
+				<li>RC versions (beta) are now available through the launcher</li>
+				<li>Many bugs related to Electron should no longer happen</li>
+				<li>Electron security vulnerabilities are no longer relevant</li>
+				</ul>
+			</description>
+		</release>
 		<release version="1.3.2" date="2022-09-28"/>
 		<release version="1.3.1" date="2022-04-12">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v1.3.1</url>

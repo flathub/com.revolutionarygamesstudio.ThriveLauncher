@@ -1,87 +1,81 @@
 app-id: com.revolutionarygamesstudio.ThriveLauncher
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
-base: org.electronjs.Electron2.BaseApp
-base-version: '21.08'
-command: thrivelauncher
+command: ThriveLauncher
 separate-locales: false
-rename-icon: thrive-launcher
+rename-icon: thrive-launcher-icon
 finish-args:
   - --share=network
-  - --device=dri
+  # This is required for controller input to work
+  - --device=all
   - --socket=x11
+  - --socket=wayland
   - --socket=pulseaudio
   - --share=ipc
+
 modules:
-  - name: unappimage
-    buildsystem: simple
-    build-commands:
-      - make -C squashfs-tools install INSTALL_DIR=/app/bin
-    sources:
-      - type: git
-        url: https://github.com/refi64/unappimage
-        commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
-
-  - name: p7zip
-    no-autogen: true
-    build-options:
-    strip: true
-    make-args:
-      - all2
-      - OPTFLAGS=-O2 -g
-      - DEST_HOME=$(FLATPAK_DEST)
-      - DEST_BIN=$(FLATPAK_DEST)/bin
-      - DEST_SHARE=$(FLATPAK_DEST)/lib/p7zip
-      - DEST_MAN=$(FLATPAK_DEST)/share/man
-    make-install-args:
-      - DEST_HOME=$(FLATPAK_DEST)
-      - DEST_BIN=$(FLATPAK_DEST)/bin
-      - DEST_SHARE=$(FLATPAK_DEST)/lib/p7zip
-      - DEST_MAN=$(FLATPAK_DEST)/share/man
-    sources:
-      - type: archive
-        url: https://github.com/jinfeihan57/p7zip/archive/v17.03.tar.gz
-        sha256: bb4b9b21584c0e076e0b4b2705af0dbe7ac19d378aa7f09a79da33a5b3293187
-
   - name: thrive-launcher
     buildsystem: simple
-    cleanup:
-      - squashfs-root
+    build-options:
+      no-debuginfo: true
+      # no-debuginfo-compression: true
+      strip: false
+      append-path: "/run/build/thrive-launcher/dotnet-sdk"
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+        DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
     sources:
-      - type: file
-        url: https://github.com/Revolutionary-Games/Thrive-Launcher/releases/download/v1.3.2/Thrive-Launcher-1.3.2.AppImage
-        sha256: 5b849209c84a5ca2e9d85086bd373ab7373e0505fe5a2c2f001fffa75b6e51d8
-        dest-filename: Thrive-Launcher.AppImage
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/Revolutionary-Games/Thrive-Launcher/releases/latest
-          version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="Thrive-Launcher-" + $version + ".AppImage")
-            | .browser_download_url
 
-      - type: script
-        dest-filename: thrivelauncher
-        commands:
-          - exec zypak-wrapper /app/bin/image/thrive-launcher
+      - type: git
+        url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
+        commit: ed7ea34cf2a1ecfd4728d16976577636f63b522d
+
+      - type: archive
+        dest: dotnet-sdk
+        only-arches: [x86_64]
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.403/dotnet-sdk-6.0.403-linux-x64.tar.gz
+        sha256: e0e751e978d6024c8c75620e0f35f086534d2e81cd26f2fc0ed01423d5e99e19
+        x-checker-data:
+          type: html
+          url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
+          version-pattern: ^([\d\.a-z-]+)$
+          url-template: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz
+
+      - nuget_sources.json
 
       - type: file
         path: com.revolutionarygamesstudio.ThriveLauncher.appdata.xml
 
     build-commands:
-      #Launcher script
-      - install -t ${FLATPAK_DEST}/bin thrivelauncher
-      # Extract launcher
-      - unappimage Thrive-Launcher.AppImage
-      # Install launcher
-      - mkdir -p /app/bin/image
-      - cp -r squashfs-root/* /app/bin/image/
-      # Move usr directory
-      - mkdir -p /app/share/icons/hicolor
-      - cp -r squashfs-root/usr/share/icons/hicolor/* /app/share/icons/hicolor/
+      # Sanity check making sure the dotnet-sdk install works
+      - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
+
+      # This tries to detect if the lfs pull has been performed or not
+      - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
+
+      # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
+      - dotnet build Scripts --source nuget-sources
+
+      # Build and install the launcher
+      - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --type Flatpak --output /app/bin --output-without-subfolders --nuget-source nuget-sources
+
+      # Icon files for the .desktop file
+      - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
+      - install -Dm644 ThriveLauncher/Assets/Icons/48x48.png "/app/share/icons/hicolor/48x48/apps/thrive-launcher-icon.png"
+      - install -Dm644 ThriveLauncher/Assets/Icons/128x128.png "/app/share/icons/hicolor/128x128/apps/thrive-launcher-icon.png"
+      - install -Dm644 ThriveLauncher/Assets/Icons/256x256.png "/app/share/icons/hicolor/256x256/apps/thrive-launcher-icon.png"
+      - install -Dm644 ThriveLauncher/Assets/Icons/512x512.png "/app/share/icons/hicolor/512x512/apps/thrive-launcher-icon.png"
+
+      # This big of an icon is disallowed
+      # - install -Dm644 /app/bin/thrive-launcher-icon.png "/app/share/icons/hicolor/1024x1024/apps/thrive-launcher-icon.png"
+      - rm -f /app/bin/thrive-launcher-icon.png
+
       # Install desktop file
-      - install -Dm644 squashfs-root/thrive-launcher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
-      - desktop-file-edit --set-key="Exec" --set-value="thrivelauncher" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -Dm644 /app/bin/ThriveLauncher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+
+      # - desktop-file-edit --set-key="Exec" --set-value="ThriveLauncher" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - desktop-file-edit --set-key="Name" --set-value="Thrive" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+
       # Install app data
       - install -Dm644 com.revolutionarygamesstudio.ThriveLauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
