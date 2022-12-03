@@ -120,6 +120,13 @@
     },
     {
         "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/dynamicdata/7.12.11/dynamicdata.7.12.11.nupkg",
+        "sha512": "9478b9c0e81c11914798cff288e3d656f33592faa5bc6eac3bc4d47bc8d9cb07ab0664fb8925c61db290a9bdccb1cc906d61ac6d7fcb6f54127346899081e4dc",
+        "dest": "nuget-sources",
+        "dest-filename": "dynamicdata.7.12.11.nupkg"
+    },
+    {
+        "type": "file",
         "url": "https://api.nuget.org/v3-flatcontainer/harfbuzzsharp/2.8.2.1-preview.108/harfbuzzsharp.2.8.2.1-preview.108.nupkg",
         "sha512": "3de9e6ea186df99fd9a6d1d48908cc3d36ac9b7d1d16dfe5adef99b29d43eab6cd27b5ac85479d054b6cdc05cc92acdd981dfa1d46bfafedda3d83b28394cbe5",
         "dest": "nuget-sources",
@@ -421,17 +428,17 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/nlog/5.0.5/nlog.5.0.5.nupkg",
-        "sha512": "5bc0a8d7381384346d4148ccd0b490eef8bf71dda4bb66453b252304b7bdb720d80c7cdfeea5a8ee50d965c0d3c5984ac02ec36c4a53f8ce3dc6be4145078c90",
+        "url": "https://api.nuget.org/v3-flatcontainer/nlog/5.1.0/nlog.5.1.0.nupkg",
+        "sha512": "44dca3d4665ca99f29c87fa8d0bdc5a50b579deb64f53e404b0c6b9537adf208884805be2cf1c5a61da6dbeaa10057dea538c6f1697085e5eb2c8dc66bf96c06",
         "dest": "nuget-sources",
-        "dest-filename": "nlog.5.0.5.nupkg"
+        "dest-filename": "nlog.5.1.0.nupkg"
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/nlog.extensions.logging/5.1.0/nlog.extensions.logging.5.1.0.nupkg",
-        "sha512": "f9d36a86693465a2b56ab12697af861f8fdc15af5bd15434baabae08a26812167e87b14fc7d8781d610d2757d8ee71953f468aa376e8cf0b51d80729b7af07e8",
+        "url": "https://api.nuget.org/v3-flatcontainer/nlog.extensions.logging/5.2.0/nlog.extensions.logging.5.2.0.nupkg",
+        "sha512": "b931b1e71ce7cb6cba033e6a666800e8deb98d7279ce6b139cb172235625ecf74a004b23a2ed4320bb71608270324e7e2394c20e4302af445973f51c2921849a",
         "dest": "nuget-sources",
-        "dest-filename": "nlog.extensions.logging.5.1.0.nupkg"
+        "dest-filename": "nlog.extensions.logging.5.2.0.nupkg"
     },
     {
         "type": "file",
