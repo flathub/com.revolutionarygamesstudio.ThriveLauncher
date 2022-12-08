@@ -83,6 +83,28 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.0.1" date="2022-12-08">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.1</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Added contextual explanations to some of the launcher options as to why they are disabled</li>
+				<li>Added a guard against invalid locale name breaking the launcher</li>
+				<li>Added a button to clear the remembered (last played) version</li>
+				<li>Background task errors are now properly handled and a warning popup is now shown to the user</li>
+				<li>Fixed "no compatible Thrive versions found" warning popping up when it shouldn't</li>
+				<li>Fixed Ukrainian locale being attempted to be loaded with the wrong name</li>
+				<li>Fixed the initial launcher running causing settings to immediately change due to default language</li>
+				<li>Fixed the reset all settings button not resetting the launcher language correctly</li>
+				<li>Fixed the playing popup title being unset if the launcher window was reopened after Thrive was ran</li>
+				<li>Print the message about waiting for child process to exit once per minute</li>
+				<li>Seamless mode option is now correctly only shown when the launcher is a store version</li>
+				<li>Did some code cleanup and removed TODOs that were already done</li>
+				<li>New languages: German, Romanian, Swedish, Russian</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.0" date="2022-12-03">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.0</url>
 			<description>
