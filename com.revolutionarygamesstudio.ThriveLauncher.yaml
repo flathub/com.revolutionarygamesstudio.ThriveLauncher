@@ -26,10 +26,9 @@ modules:
         DOTNET_CLI_TELEMETRY_OPTOUT: "true"
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
     sources:
-
-      - type: git
-        url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
-        commit: ed7ea34cf2a1ecfd4728d16976577636f63b522d
+      - type: archive
+        url: https://cdn.shosetsu.app/thrive/Thrive-Launcher-v2.0.1.tar.xz
+        sha256: 80922ead59fb597339073396e02f432a423199541e8d808c7bf4e279ac2b288c
 
       - type: archive
         dest: dotnet-sdk

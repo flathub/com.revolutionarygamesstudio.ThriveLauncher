@@ -407,10 +407,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/moq/4.18.2/moq.4.18.2.nupkg",
-        "sha512": "f7c8145e759399b13d5dd1b3acec8ebdfd898a4923e17a2a6cfa842d3a587d2b03f9bc3623ef952234e3db6efd602f3db7b05196bdf89a2ccaca7eecf487d4c2",
+        "url": "https://api.nuget.org/v3-flatcontainer/moq/4.18.3/moq.4.18.3.nupkg",
+        "sha512": "6cf733f5404f50824caf6b367b8ac756e307c237157bdda81e54eed4fdf79f812e8e01653f0cfb0ed3886d876fbf5486c94663b1bf556277bb1333b9c1426735",
         "dest": "nuget-sources",
-        "dest-filename": "moq.4.18.2.nupkg"
+        "dest-filename": "moq.4.18.3.nupkg"
     },
     {
         "type": "file",
@@ -1394,10 +1394,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/xamlnamereferencegenerator/1.4.2/xamlnamereferencegenerator.1.4.2.nupkg",
-        "sha512": "74344d1d2dfda9ed362e83c58ad02eb56b141176007d49aebfac774690cb3dc95a56e3bb567bfd1b0da3305f923346bc5116149a17387f0b0ebcc7cd6e7a6a0c",
+        "url": "https://api.nuget.org/v3-flatcontainer/xamlnamereferencegenerator/1.5.1/xamlnamereferencegenerator.1.5.1.nupkg",
+        "sha512": "39ea7a63641a21d272f966cd93a63fca173a165a302b382367cf6b36b5ad508c2f469e9abc90ea7e4af654c96644b750b8842f6bc896dc9ab1e2063805760771",
         "dest": "nuget-sources",
-        "dest-filename": "xamlnamereferencegenerator.1.4.2.nupkg"
+        "dest-filename": "xamlnamereferencegenerator.1.5.1.nupkg"
     },
     {
         "type": "file",
