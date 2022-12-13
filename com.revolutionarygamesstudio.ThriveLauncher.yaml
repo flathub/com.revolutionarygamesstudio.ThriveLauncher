@@ -1,6 +1,6 @@
 app-id: com.revolutionarygamesstudio.ThriveLauncher
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: ThriveLauncher
 separate-locales: false
@@ -21,10 +21,10 @@ modules:
       no-debuginfo: true
       # no-debuginfo-compression: true
       strip: false
-      append-path: "/run/build/thrive-launcher/dotnet-sdk"
+      append-path: /run/build/thrive-launcher/dotnet-sdk
       env:
-        DOTNET_CLI_TELEMETRY_OPTOUT: "true"
-        DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
+        DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+        DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
     sources:
       - type: archive
         url: https://cdn.shosetsu.app/thrive/Thrive-Launcher-v2.0.1.tar.xz
@@ -33,8 +33,8 @@ modules:
       - type: archive
         dest: dotnet-sdk
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.403/dotnet-sdk-6.0.403-linux-x64.tar.gz
-        sha256: e0e751e978d6024c8c75620e0f35f086534d2e81cd26f2fc0ed01423d5e99e19
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.404/dotnet-sdk-6.0.404-linux-x64.tar.gz
+        sha256: 9350b3739d12fe8f56587ad0fb8905255f733a4252ad363ff688e962a646cc2d
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
@@ -48,16 +48,20 @@ modules:
 
     build-commands:
       # Sanity check making sure the dotnet-sdk install works
-      - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed right"; else echo "SDK install failed" && exit 1; fi
+      - if [[ $(dotnet --list-sdks) ]]; then echo "dotnet SDK was probably installed
+        right"; else echo "SDK install failed" && exit 1; fi
 
       # This tries to detect if the lfs pull has been performed or not
-      - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS files haven't been setup" && exit 1; fi
+      - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS
+        files haven't been setup" && exit 1; fi
 
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
       - dotnet build Scripts --source nuget-sources
 
       # Build and install the launcher
-      - dotnet run --no-build --project Scripts -- package Linux --compress false --installers false --podman false --type Flatpak --output /app/bin --output-without-subfolders --nuget-source nuget-sources
+      - dotnet run --no-build --project Scripts -- package Linux --compress false
+        --installers false --podman false --type Flatpak --output /app/bin --output-without-subfolders
+        --nuget-source nuget-sources
 
       # Icon files for the .desktop file
       - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
