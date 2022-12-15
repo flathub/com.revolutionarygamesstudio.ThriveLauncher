@@ -83,6 +83,19 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.0.2" date="2022-12-15">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.2</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Downloaded bytes display now always shows 2 decimals for more stable displaying</li>
+				<li>Put some overtly verbose log messages to the trace level to not spam log files so hard</li>
+				<li>Added the same code checking tools we use for Thrive to this project and corrected the resulting warnings</li>
+				<li>Fixed wrong name used for Swedish locale</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.1" date="2022-12-08">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.1</url>
 			<description>
