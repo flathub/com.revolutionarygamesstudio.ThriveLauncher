@@ -28,7 +28,7 @@ modules:
     sources:
       - type: archive
         url: https://dev.revolutionarygamesstudio.com/api/v1/download/37952
-        sha256: 8573203f1235a83175105fefa3072a502eef702ba241fa28d3d63ca6e629baf0
+        sha256: ae388b7f3709cc881d152ea799cb8b020020d95a32e43bbd67a5c41fa1b29899
 
       - type: archive
         dest: dotnet-sdk
