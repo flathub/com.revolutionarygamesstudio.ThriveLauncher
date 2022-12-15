@@ -27,8 +27,8 @@ modules:
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     sources:
       - type: archive
-        url: https://cdn.shosetsu.app/thrive/Thrive-Launcher-v2.0.1.tar.xz
-        sha256: 80922ead59fb597339073396e02f432a423199541e8d808c7bf4e279ac2b288c
+        url: https://dev.revolutionarygamesstudio.com/api/v1/download/37952
+        sha256: 8573203f1235a83175105fefa3072a502eef702ba241fa28d3d63ca6e629baf0
 
       - type: archive
         dest: dotnet-sdk
