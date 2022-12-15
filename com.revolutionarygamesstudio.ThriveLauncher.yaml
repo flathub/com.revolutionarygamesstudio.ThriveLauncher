@@ -29,7 +29,7 @@ modules:
       - type: archive
         url: https://dev.revolutionarygamesstudio.com/api/v1/download/37952
         archive-type: tar-xz
-        sha256: ae388b7f3709cc881d152ea799cb8b020020d95a32e43bbd67a5c41fa1b29899
+        sha256: dad1da5180962b49ca1a301ad330499dbadc99d58f617353bd89334f43d9cdf2
 
       - type: archive
         dest: dotnet-sdk
