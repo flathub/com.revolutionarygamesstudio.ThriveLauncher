@@ -232,10 +232,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.netanalyzers/6.0.0/microsoft.codeanalysis.netanalyzers.6.0.0.nupkg",
-        "sha512": "8d16b934642e2a61a6676d3522677961e68271174875f17573e905a926ec1ef57342d3a0156b4ef6e0dd488138616093191c24570601bc194fbc7a12195859f9",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.netanalyzers/7.0.0/microsoft.codeanalysis.netanalyzers.7.0.0.nupkg",
+        "sha512": "81b21fb62a0694a075b982a034ba9593921c109f5aade95c0c33ad3822b80d9873c69f99c0dab690ca3a64a704182dccadfef540a8643f009f460c955249b8f6",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.codeanalysis.netanalyzers.6.0.0.nupkg"
+        "dest-filename": "microsoft.codeanalysis.netanalyzers.7.0.0.nupkg"
     },
     {
         "type": "file",
