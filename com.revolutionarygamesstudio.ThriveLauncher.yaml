@@ -27,15 +27,15 @@ modules:
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     sources:
       - type: archive
-        url: https://dev.revolutionarygamesstudio.com/api/v1/download/37952
+        url: https://dev.revolutionarygamesstudio.com/api/v1/download/38153
         archive-type: tar-xz
-        sha256: dad1da5180962b49ca1a301ad330499dbadc99d58f617353bd89334f43d9cdf2
+        sha256: 99f847ff109aae7b6a3a4034a6a60eba5ae05c6813816a32b84e002355d1ee3a
 
       - type: archive
         dest: dotnet-sdk
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.403/dotnet-sdk-6.0.403-linux-x64.tar.gz
-        sha256: e0e751e978d6024c8c75620e0f35f086534d2e81cd26f2fc0ed01423d5e99e19
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.404/dotnet-sdk-6.0.404-linux-x64.tar.gz
+        sha256: 9350b3739d12fe8f56587ad0fb8905255f733a4252ad363ff688e962a646cc2d
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version

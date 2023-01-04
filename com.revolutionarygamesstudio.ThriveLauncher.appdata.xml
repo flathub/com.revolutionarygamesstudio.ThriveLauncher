@@ -83,6 +83,25 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.0.3" date="2023-01-04">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.3</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Fixed issues in launcher startup language detection</li>
+				<li>Updated bundled in godotpcktool version</li>
+				<li>Copying game output now also copies the played version</li>
+				<li>Startup fail advice suppression time is now much longer to make sure it is more reliably shown. The fail advice is now suppressed if Thrive reported that it was requested to close by the user.</li>
+				<li>Launcher version update checking version number comparison failure now shows a failure popup</li>
+				<li>The default logging level is now info with a new command line flag allowing exact tweaking of logging level</li>
+				<li>There is now an option in the launcher options to turn on verbose logging</li>
+				<li>Detected crash dumps advice can now be localized</li>
+				<li>New language: Italian (note, no translation work has been done yet, you can help on our translations website)</li>
+				<li>Updated translations</li>
+				<li>Updated dependency versions</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.2" date="2022-12-15">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.2</url>
 			<description>
