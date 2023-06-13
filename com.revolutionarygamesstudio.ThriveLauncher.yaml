@@ -34,8 +34,8 @@ modules:
       - type: archive
         dest: dotnet-sdk
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.404/dotnet-sdk-6.0.404-linux-x64.tar.gz
-        sha256: 9350b3739d12fe8f56587ad0fb8905255f733a4252ad363ff688e962a646cc2d
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.410/dotnet-sdk-6.0.410-linux-x64.tar.gz
+        sha256: 95c8afc880a448ab04e78f91aa40259c635a94337ba57097fb750dbb2ce0b6bf
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
@@ -53,16 +53,16 @@ modules:
         else echo "SDK install failed" && exit 1; fi
 
       # This tries to detect if the lfs pull has been performed or not
-      - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo
-        "LFS files haven't been setup" && exit 1; fi
+      - if (( $(stat -c%s ThriveLauncher/launcher-icon.png) < 20000)); then echo "LFS
+        files haven't been setup" && exit 1; fi
 
       # Prepare build scripts for running (this is because the "run" command does not allow "--source" parameter)
       - dotnet build Scripts --source nuget-sources
 
       # Build and install the launcher
       - dotnet run --no-build --project Scripts -- package Linux --compress false
-        --installers false --podman false --type Flatpak --output /app/bin
-        --output-without-subfolders --nuget-source nuget-sources
+        --installers false --podman false --type Flatpak --output /app/bin --output-without-subfolders
+        --nuget-source nuget-sources
 
       # Icon files for the .desktop file
       - install -Dm644 ThriveLauncher/Assets/Icons/16x16.png "/app/share/icons/hicolor/16x16/apps/thrive-launcher-icon.png"
