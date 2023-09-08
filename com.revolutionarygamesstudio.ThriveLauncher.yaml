@@ -26,10 +26,9 @@ modules:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     sources:
-      - type: archive
-        url: https://dev.revolutionarygamesstudio.com/api/v1/download/45410
-        archive-type: tar-xz
-        sha256: 07a46c869f23a5d436f08a8247de7a9c022a3805e931c8aaf4353b8c307a4d3a
+      - type: git
+        url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
+        tag: "v2.1.5"
 
       - type: archive
         dest: dotnet-sdk
