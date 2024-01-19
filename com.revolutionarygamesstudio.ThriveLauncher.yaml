@@ -34,11 +34,11 @@ modules:
       - type: archive
         dest: dotnet-sdk
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.404/dotnet-sdk-6.0.404-linux-x64.tar.gz
-        sha256: 9350b3739d12fe8f56587ad0fb8905255f733a4252ad363ff688e962a646cc2d
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.101/dotnet-sdk-8.0.101-linux-x64.tar.gz
+        sha256: 3c61ffcee8947e0ead6196799d058e671b00bc6b983983f2bde5d29f702de2fe
         x-checker-data:
           type: html
-          url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
+          url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0/latest.version
           version-pattern: ^([\d\.a-z-]+)$
           url-template: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz
 
