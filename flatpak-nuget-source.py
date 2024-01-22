@@ -21,11 +21,6 @@ import json
 
 
 def main():
-    # Bump this to latest freedesktop runtime version.
-    freedesktop_default = '22.08'
-    # Bump this to an LTS dotnet version.
-    dotnet_default = '6'
-
     parser = argparse.ArgumentParser()
     parser.add_argument('output', help='The output JSON sources file')
     parser.add_argument('input', help='The folder containing nuget package files to process')
