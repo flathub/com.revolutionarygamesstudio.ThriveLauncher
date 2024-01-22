@@ -4,3 +4,4 @@ build-dir/
 squashfs-root/
 .flatpak-builder/
 /Thrive-Launcher
+/scripts-output

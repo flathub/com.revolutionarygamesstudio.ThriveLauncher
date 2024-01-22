@@ -83,6 +83,30 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.1.0" date="2024-01-22">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.0</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+                <li>Fixed crash when latest Thrive version is not available for current platform (this caused the launcher to immediately crash on mac)</li>
+                <li>Added thread synchronization for play message display to try to fix a rare crash</li>
+                <li>Temporary download files are now kept in the launcher data folder to ensure temp filesystems with limited space don't cause issues. There's a new system for the launcher to clean its own old temporary files when starting.</li>
+                <li>Local crash dumps are now always deleted after reporting a crash</li>
+                <li>Crash reporter no longer auto selects log files if reporting non-latest crash</li>
+                <li>Recent crashes now show the time since the crash instead of the full date and time</li>
+                <li>Crash reporter now shows an explicit message if the list of crashes is empty, instead of being completely empty</li>
+                <li>DevCenter connection now properly shows connecting text when the connection is being checked</li>
+                <li>Improved the visual spacing around the installed version folder size</li>
+                <li>The rehydrator component now deletes files with bad hashes instead of leaving them</li>
+                <li>Updated to Avalonia 11 and .NET 8</li>
+                <li>New languages: Dutch, Czech, Macedonian, and Lithuanian</li>
+                <li>Updated translations</li>
+                <li>Updated dependency versions, switched from Moq to NSubstitute</li>
+                <li>Improved launcher packaging scripts</li>
+                <li>Some internal code structure improvements</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.3" date="2023-01-04">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.3</url>
 			<description>
@@ -189,7 +213,7 @@
 		</screenshot>
 		<screenshot>
 			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_f86bdc54b25b550f09839fb0e99e35373f2843bf.jpg
+			https://cdn.akamai.steamstatic.com/steam/apps/1779200/ss_f86d5ba4b83b9d3c4be45e5d5a002804e338aa75.1920x1080.jpg?t=1701950740
 			</image>
 		</screenshot>
 		<screenshot>

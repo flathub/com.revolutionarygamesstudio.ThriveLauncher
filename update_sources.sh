@@ -2,6 +2,15 @@
 # Updates the nuget sources based on the Thrive-Launcher submodule in this repo
 # Check the script in flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py to see the
 # required sdk and dotnet extension versions
+
+# Update this when com.revolutionarygamesstudio.ThriveLauncher.yaml is updated
+DOTNET_VERSION="8.0.101"
+
+IMAGE_TYPE="bookworm-slim-amd64"
+IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
+
+# Run in subshell to prevent this accidentally closing the higher level container (and
+# changing the folder of the parent shell)
 (
     set -e
 
@@ -20,13 +29,25 @@
     git pull
     git submodule update --init --recursive
 
-    # Make sure all submodules are cloned and build works
-    echo "Building and extracting nuget packages"
-    dotnet build ThriveLauncher.sln
-    # We use the whole solution here to make sure the scripts can also run when building
-    python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json ThriveLauncher.sln --runtime linux-x64
-    # python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json ThriveLauncher/ThriveLauncher.csproj --runtime linux-x64
+    echo "Running build in container for consistent SDK version"
+    echo "Using podman image $IMAGE"
 
+    rm -rf ../scripts-output
+    mkdir -p ../scripts-output
+    podman run --rm --mount type=bind,src=../scripts-output,target=/out,z --mount type=bind,src=.,target=/src,z $IMAGE bash -c 'cd /src/ && dotnet restore ThriveLauncher.sln --packages /out -r linux-x64'
+
+    # This old approach no longer works as it isn't maintained
+    # We use the whole solution here to make sure the scripts can also run when building
+    # python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json \
+    #         ThriveLauncher.sln --freedesktop $FREEDESKTOP_RUNTIME --dotnet $DOTNET_VERSION \
+    #         --runtime linux-x64
+    # python3 ../flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py ../nuget_sources.json \
+    #    ThriveLauncher/ThriveLauncher.csproj --runtime linux-x64
+
+    python3 ../flatpak-nuget-source.py ../nuget_sources.json ../scripts-output/
+
+    echo "Extracted nuget package sources from build"
+    
     # Optional test to see if the launcher works locally, if it
     # doesn't then bad backages probably got written. To resolve the
     # problem the bin and obj folders need to be deleted to make a
