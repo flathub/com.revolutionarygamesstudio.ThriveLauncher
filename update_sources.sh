@@ -1,10 +1,9 @@
 #!/usr/bin/sh
-# Updates the nuget sources based on the Thrive-Launcher submodule in this repo
-# Check the script in flatpak-builder-tools/dotnet/flatpak-dotnet-generator.py to see the
-# required sdk and dotnet extension versions
+# Updates the nuget sources based on the Thrive-Launcher repo in this repo (will be
+# cloned automatically)
 
 # Update this when com.revolutionarygamesstudio.ThriveLauncher.yaml is updated
-DOTNET_VERSION="8.0.101"
+DOTNET_VERSION="8.0.200"
 
 IMAGE_TYPE="bookworm-slim-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
@@ -34,7 +33,9 @@ IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
 
     rm -rf ../scripts-output
     mkdir -p ../scripts-output
-    podman run --rm --mount type=bind,src=../scripts-output,target=/out,z --mount type=bind,src=.,target=/src,z $IMAGE bash -c 'cd /src/ && dotnet restore ThriveLauncher.sln --packages /out -r linux-x64'
+    podman run --rm --mount type=bind,src=../scripts-output,target=/out,z \
+           --mount type=bind,src=.,target=/src,z $IMAGE bash -c \
+           'cd /src/ && dotnet restore ThriveLauncher.sln --packages /out -r linux-x64'
 
     # This old approach no longer works as it isn't maintained
     # We use the whole solution here to make sure the scripts can also run when building
