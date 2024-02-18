@@ -83,8 +83,6 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
-		<release version="8.0.201" date="2024-02-16"/>
-		<release version="8.0.200" date="2024-02-13"/>
 		<release version="2.1.0" date="2024-01-22">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.0</url>
 			<description>
@@ -209,14 +207,14 @@
 	
 	<screenshots>
 		<screenshot type="default">
-			<video container="webm" width="1920" height="1080">
-			https://cdn.cloudflare.steamstatic.com/steam/apps/256857711/movie_max_vp9.webm
-			</video>
-		</screenshot>
-		<screenshot>
 			<image>
 			https://cdn.akamai.steamstatic.com/steam/apps/1779200/ss_f86d5ba4b83b9d3c4be45e5d5a002804e338aa75.1920x1080.jpg?t=1701950740
 			</image>
+		</screenshot>
+		<screenshot>
+			<video container="webm" width="1920" height="1080">
+			https://cdn.cloudflare.steamstatic.com/steam/apps/256857711/movie_max_vp9.webm
+			</video>
 		</screenshot>
 		<screenshot>
 			<image>
