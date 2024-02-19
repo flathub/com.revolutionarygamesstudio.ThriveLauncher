@@ -3,10 +3,13 @@
 # cloned automatically)
 
 # Update this when com.revolutionarygamesstudio.ThriveLauncher.yaml is updated
-DOTNET_VERSION="8.0.200"
+DOTNET_VERSION="8.0.201"
 
 IMAGE_TYPE="bookworm-slim-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
+
+LAUNCHER_VERSION="v2.1.0"
+# LAUNCHER_VERSION="master"
 
 # Run in subshell to prevent this accidentally closing the higher level container (and
 # changing the folder of the parent shell)
@@ -24,8 +27,17 @@ IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
     cd Thrive-Launcher
 
     echo "Updating launcher version"
-    git checkout master
-    git pull
+
+    if [ "$LAUNCHER_VERSION" = "master" ]; then
+        echo "Using latest master branch version"
+        git checkout master
+        git pull
+    else
+        echo "Using specific launcher version: $LAUNCHER_VERSION"
+        git fetch origin
+        git checkout "$LAUNCHER_VERSION"
+    fi
+
     git submodule update --init --recursive
 
     echo "Running build in container for consistent SDK version"
