@@ -83,6 +83,17 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.1.1" date="2024-02-21">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.1</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Added a button in the launcher options to exit the launcher for use cases where the window title bar is not visible.</li>
+				<li>New language: Croatian (please help us translate on our translations site, the translation was created by a community member but no actual translations were done yet)</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.0" date="2024-01-22">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.0</url>
 			<description>

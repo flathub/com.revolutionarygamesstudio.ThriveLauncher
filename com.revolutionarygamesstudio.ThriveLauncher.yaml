@@ -27,9 +27,9 @@ modules:
         DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     sources:
       - type: archive
-        url: https://dev.revolutionarygamesstudio.com/api/v1/download/43433
+        url: https://dev.revolutionarygamesstudio.com/api/v1/download/43900
         archive-type: tar-xz
-        sha256: 1034ece96b943fa61f67303b19ebbb161991fa1f40fc76d77763a0f9fbffd9d5
+        sha256: 5ae954e1e6d75adba7cb01a386c6d5517dbf62e443174fdb1f1359495765462c
 
       - type: archive
         dest: dotnet-sdk
