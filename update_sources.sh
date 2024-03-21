@@ -3,7 +3,7 @@
 # cloned automatically)
 
 # Update this when com.revolutionarygamesstudio.ThriveLauncher.yaml is updated
-DOTNET_VERSION="8.0.201"
+DOTNET_VERSION="8.0.202"
 
 IMAGE_TYPE="bookworm-slim-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
