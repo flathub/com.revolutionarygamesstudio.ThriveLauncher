@@ -83,6 +83,18 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.1.2" date="2024-03-21">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.2</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Updated devbuilds system and bundled godotpcktool to support Godot 4 based Thrive versions</li>
+				<li>Launcher quit now always ensures the background watcher task will also quit, which should allow the launcher to more reliably quit for example due to starting auto update</li>
+				<li>Updated Avalonia from 11.0.7 to 11.0.10</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.1" date="2024-02-21">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.1</url>
 			<description>
