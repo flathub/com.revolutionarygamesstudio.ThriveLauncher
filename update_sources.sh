@@ -8,7 +8,8 @@ DOTNET_VERSION="8.0.202"
 IMAGE_TYPE="bookworm-slim-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
 
-LAUNCHER_VERSION="v2.1.2"
+# Uses the latest tag
+LAUNCHER_VERSION=$(curl -sB "https://api.github.com/repos/Revolutionary-Games/Thrive-Launcher/releases/latest" | jq ".tag_name" | sed "s/\"//g")
 # LAUNCHER_VERSION="master"
 
 # Run in subshell to prevent this accidentally closing the higher level container (and

@@ -30,6 +30,11 @@ modules:
         url: https://dev.revolutionarygamesstudio.com/api/v1/download/44480
         archive-type: tar-xz
         sha256: 5920d8f78fab5f999d7c6a79ce20d46eecf3f5f64c0369a82663f5d21d9ecd7c
+        x-checker-data:
+          type: html
+          url: https://dev.revolutionarygamesstudio.com/api/v1/Files/folderContents?sortColumn=Name&sortDirection=Descending&page=1&pageSize=100&parentId=37951
+          version-pattern: \"id\":(\d+)
+          url-template: https://dev.revolutionarygamesstudio.com/api/v1/download/$version
 
       - type: archive
         dest: dotnet-sdk
