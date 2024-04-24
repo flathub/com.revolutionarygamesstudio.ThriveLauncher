@@ -8,7 +8,7 @@ DOTNET_VERSION="8.0.204"
 IMAGE_TYPE="bookworm-slim-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
 
-LAUNCHER_VERSION="v2.1.3"
+LAUNCHER_VERSION="v2.1.4"
 # LAUNCHER_VERSION="master"
 
 # Run in subshell to prevent this accidentally closing the higher level container (and
