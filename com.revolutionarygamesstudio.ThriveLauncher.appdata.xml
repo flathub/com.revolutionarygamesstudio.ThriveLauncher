@@ -83,16 +83,16 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
-        <release version="2.1.5" date="2024-04-29">
-            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.5</url>
-            <description>
-                <p>Changes</p>
-                <ul>
-                <li>Added check in the launcher for required SSE 4.2 instructions support to be able to show a warning before even trying to start Thrive</li>
-                <li>Updated translations</li>
-                </ul>
-            </description>
-        </release>
+		<release version="2.1.5" date="2024-04-29">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.5</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Added check in the launcher for required SSE 4.2 instructions support to be able to show a warning before even trying to start Thrive</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.4" date="2024-04-24">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.4</url>
 			<description>
