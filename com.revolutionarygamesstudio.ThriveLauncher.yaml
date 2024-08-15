@@ -28,14 +28,14 @@ modules:
     sources:
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
-        tag: "v2.1.5"
+        tag: v2.1.5
         disable-shallow-clone: true
 
       - type: archive
         dest: dotnet-sdk
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.204/dotnet-sdk-8.0.204-linux-x64.tar.gz
-        sha256: 0ec834dc0f11a994057cd05d84c6250db726457f2fe308091d50543a5285dd15
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0.401/dotnet-sdk-8.0.401-linux-x64.tar.gz
+        sha256: 6231d3902d2b2d8e73a3d681c5cbaacc95be35bdc02e25bd3947d0ab8629f9f9
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/8.0/latest.version
