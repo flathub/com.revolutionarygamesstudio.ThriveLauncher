@@ -9,6 +9,11 @@
 
 	<summary>Evolution simulation game</summary>
 
+	<branding>
+		<color type="primary" scheme_preference="light">#006F86</color>
+		<color type="primary" scheme_preference="dark">#112B36</color>
+	</branding>
+
 	<description>
 		<p>
 		In Thrive, you take control of an organism on an alien planet, beginning with the Last Universal Common Ancestor (LUCA). Your goal is to survive in the environment, adapt your species by adding mutations, and thrive. Other species will emerge to compete with yours. They will evolve via a population dynamics driven simulation with random mutations - you must improve and spread your species to surpass them. The success of your species depends both on your skill in surviving as an individual cell and the changes you make in the editor.
