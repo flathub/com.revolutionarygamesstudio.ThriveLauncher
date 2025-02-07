@@ -65,10 +65,12 @@
 
 	<categories>
 		<category>Game</category>
+		<category>Simulation</category>
 	</categories>
 
 	<keywords>
 		<keyword>Spore</keyword>
+		<keyword>Thrive</keyword>
 	</keywords>
 
 	<url type="homepage">https://revolutionarygamesstudio.com/</url>
@@ -252,6 +254,7 @@
 
 	<requires>
 		<control>keyboard</control>
+		<control>pointing</control>
 	</requires>
 	<recommends>
 		<memory>4096</memory>	
