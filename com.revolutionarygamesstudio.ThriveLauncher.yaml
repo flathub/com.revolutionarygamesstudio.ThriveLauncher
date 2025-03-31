@@ -2,7 +2,7 @@ app-id: com.revolutionarygamesstudio.ThriveLauncher
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-command: ThriveLauncher
+command: run.sh
 separate-locales: false
 rename-icon: thrive-launcher-icon
 finish-args:
@@ -13,6 +13,14 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --share=ipc
+    # gamescope
+  - --env=PATH=/app/bin:/app/utils/gamescope/bin:/usr/bin
+  - --socket=fallback-x11 # Gamescope on X11
+
+add-extensions:
+  com.valvesoftware.Steam.Utility.gamescope:
+    add-ld-path: lib
+    directory: utils/gamescope
 
 modules:
   - name: thrive-launcher
@@ -83,3 +91,17 @@ modules:
 
       # Install app data
       - install -Dm644 com.revolutionarygamesstudio.ThriveLauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
+
+  - name: gamescope
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/utils/gamescope
+
+  - name: main-script
+    buildsystem: simple
+    build-commands:
+      - install -D -t "${FLATPAK_DEST}/bin/" ./run.sh
+    sources:
+      - type: script
+        commands:
+          - gamescope $GAMESCOPE_ARGS -- ThriveLauncher
