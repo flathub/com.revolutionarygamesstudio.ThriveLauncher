@@ -73,9 +73,9 @@
 		<keyword>Thrive</keyword>
 	</keywords>
 
-	<url type="homepage">https://revolutionarygamesstudio.com/</url>
+	<url type="homepage">https://www.revolutionarygamesstudio.com/</url>
 	<url type="bugtracker">https://github.com/Revolutionary-Games/Thrive/issues</url>
-	<url type="faq">https://revolutionarygamesstudio.com/faq/</url>
+	<url type="faq">https://www.revolutionarygamesstudio.com/faq</url>
 	<url type="help">https://wiki.revolutionarygamesstudio.com/wiki/Main_Page</url>
 	<url type="donation">https://www.patreon.com/thrivegame</url>
 	<url type="translate">https://github.com/Revolutionary-Games/Thrive/blob/master/doc/working_with_translations.md</url>
@@ -85,6 +85,28 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.2.0" date="2025-05-14">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.0</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Added an option to disable Thrive mods when starting</li>
+				<li>Selecting a DevBuild / hash now selects that to be played automatically in the version selector</li>
+				<li>Updated Avalonia to 11.3.0</li>
+				<li>Updated to .NET 9</li>
+				<li>Updated bundled 7-zip to latest version and switched Mac and Linux to use the official 7-zip instead of p7zip</li>
+				<li>Added an option to prefer system-installed tools instead of bundled which may help if the bundled tools have a problem on some computers</li>
+				<li>Updated the list of links in the launcher to reflect our latest social media accounts</li>
+				<li>Fixed printing sensitive tokens on settings reset to logs</li>
+				<li>Removed Avalonia window activation workaround when launcher pops back up</li>
+				<li>Updated various dependencies like the logging and testing libraries</li>
+				<li>Updated our build scripts to add proper signing support</li>
+				<li>Did some code cleanup and removed some old data</li>
+				<li>New language: Georgian</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.5" date="2024-04-29">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.5</url>
 			<description>
