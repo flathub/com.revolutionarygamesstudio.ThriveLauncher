@@ -85,6 +85,9 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="9.0.301" date="2025-06-10">
+			<description></description>
+		</release>
 		<release version="2.2.0" date="2025-05-14">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.0</url>
 			<description>
