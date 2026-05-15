@@ -3,13 +3,13 @@
 # cloned automatically)
 
 # Update this when com.revolutionarygamesstudio.ThriveLauncher.yaml is updated
-DOTNET_VERSION="9.0.305"
+DOTNET_VERSION="10.0.101"
 
-IMAGE_TYPE="bookworm-slim-amd64"
+IMAGE_TYPE="noble-amd64"
 IMAGE="mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION-$IMAGE_TYPE"
 
-LAUNCHER_VERSION="v2.2.1"
-# LAUNCHER_VERSION="master"
+# LAUNCHER_VERSION="v2.2.1"
+LAUNCHER_VERSION="master"
 
 # Run in subshell to prevent this accidentally closing the higher level container (and
 # changing the folder of the parent shell)
