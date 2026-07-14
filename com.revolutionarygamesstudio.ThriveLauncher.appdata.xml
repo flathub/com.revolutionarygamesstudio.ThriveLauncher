@@ -85,7 +85,22 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
-        <release version="2.3.0" date="2026-05-15">
+		<release version="2.3.1" date="2026-07-14">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.1</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Updated included godotpcktool version to 2.3 which now supports Godot 4.7</li>
+				<li>Playing a devbuild makes the game output have a striped background to make it really obvious when playing a devbuild</li>
+				<li>Added pagination buttons to browse the list of available devbuilds forwards and backwards</li>
+				<li>Fixed the version selector and installed version sizes not reacting to changing the launcher language</li>
+				<li>Updated Avalonia to 12.1.0</li>
+				<li>Updated other dependencies</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
+		<release version="2.3.0" date="2026-05-15">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.0</url>
 			<description>
 				<p>Changes</p>
