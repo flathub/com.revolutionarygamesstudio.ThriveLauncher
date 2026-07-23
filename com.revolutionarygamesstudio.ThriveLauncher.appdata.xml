@@ -85,6 +85,19 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.3.2" date="2026-07-23">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.2</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Removed the dependency on godotpcktool executable and now instead this uses a pure C# implementation of the feature</li>
+				<li>Added a feature to specify LD_PRELOAD for Thrive on Linux which should allow Harmony-based mods to work but this is not fully verified</li>
+				<li>There is no longer a command prompt window that opens on Windows for a little bit when playing a devbuild</li>
+				<li>Updated code checking tools and test SDK</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.3.1" date="2026-07-14">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.1</url>
 			<description>
