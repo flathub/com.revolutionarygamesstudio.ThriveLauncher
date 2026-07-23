@@ -29,6 +29,7 @@ modules:
       - type: git
         url: https://github.com/Revolutionary-Games/Thrive-Launcher.git
         tag: "v2.3.2"
+        commit: "0dd2b00c3953298bb1c91db857100a4648e8cab9"
         disable-shallow-clone: true
 
       - type: archive
