@@ -85,6 +85,9 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="10.0.400" date="2026-08-11">
+			<description></description>
+		</release>
 		<release version="2.3.2" date="2026-07-23">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.2</url>
 			<description>
