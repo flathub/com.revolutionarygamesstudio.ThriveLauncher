@@ -85,6 +85,29 @@
 	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
 
 	<releases>
+		<release version="2.4.0" date="2026-11-18">
+			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.4.0</url>
+			<description>
+				<p>Changes</p>
+				<ul>
+				<li>Added an option to select which GPU Thrive should use when running in normal Vulkan mode</li>
+				<li>Updated Avalonia to version 12.1.6</li>
+				<li>Updated bundled 7-zip version to 26.06 to resolve security vulnerabilities</li>
+				<li>There's now separate 7-zip executables for ARM and x86 Macs, and the Linux version is a statically linked one now</li>
+				<li>Fixed older beta versions not being deletable in the list of Thrive folders if all beta versions were not shown</li>
+				<li>The launcher now clears crash dumps when starting Thrive so that outdated crash dumps cannot exist as people occasionally reported old crash dumps accidentally</li>
+				<li>Removed the option to select "latest" DevBuild as it was a confusing option</li>
+				<li>Removed the soon expiring production certificate 1 and added certificate 3</li>
+				<li>Due to font problems many languages had been started but never put into the launcher as selectable. However something has fixed missing fallback fonts so now we have a lot of new Launcher languages all at once to select: Vietnamese, Hebrew, Chinese, Arabic, and Japanese.</li>
+				<li>Added a new language: Slovakian</li>
+				<li>Updated NLog and other dependencies to latest versions</li>
+				<li>Updated code checking tools and fixed new problems found by them</li>
+				<li>Fixed a few places where the code wasn't explicit about which culture to use for formatting</li>
+				<li>Fixed the setup script to prefer the new ImageMagick name on Linux</li>
+				<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.3.2" date="2026-07-23">
 			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.2</url>
 			<description>
