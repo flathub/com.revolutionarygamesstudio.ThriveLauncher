@@ -1,427 +1,387 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-
-	<id>com.revolutionarygamesstudio.ThriveLauncher</id>
-
-	<metadata_license>CC0-1.0</metadata_license>
-
-	<name>Thrive</name>
-
-	<summary>An evolution simulation game. Take control of your species in the environment and edit your species as a whole. Compete with other evolving species for resources on an alien planet. </summary>
-
-	<description>
-		<p>
-		In Thrive, you take control of an organism on an alien planet, beginning with the Last Universal Common Ancestor (LUCA). Your goal is to survive in the environment, adapt your species by adding mutations, and thrive. Other species will emerge to compete with yours. They will evolve via a population dynamics driven simulation with random mutations - you must improve and spread your species to surpass them. The success of your species depends both on your skill in surviving as an individual cell and the changes you make in the editor.
-		</p>
-		<p>
-		In the Microbe Stage, you control a single microbe or a colony of microbes bound together. You swim through a watery environment to find the resources your cell needs to stay alive and to reproduce. Once you have reproduced, you enter the editor, where you can review how well your species and others are surviving, move to new biomes, and modify your species. Add new organelles, change your membrane, and change your cell's visuals. Your goal is to become a more complex lifeform by first evolving the nucleus to become a eukaryote, then using binding agents to form cell colonies, the precursor to the first multicellular lifeforms.
-		</p>
-		
-		<p>Current key features:</p>
-		<ul>
-			<li>
-			Control an individual member of your species and survive the environment
-			</li>
-			<li>
-			Predate on other species, use photosynsthesis or scavenge for resources
-			</li>
-			<li>
-			Edit your species to make it more successful
-			</li>
-			<li>
-			Compete with other species emerging on your planet via an evolution simulation
-			</li>
-			<li>
-			Explore different biomes
-			</li>
-			<li>
-			Fight other cells with multiple cellular level weapons
-			</li>
-			<li>
-			Try different gameplay styles by specializing in different energy sources in subsequent playthroughs
-			</li>
-			<li>
-			Learn about biology by using real compounds, organelles or parts inspired by real science
-			</li>
-			<li>
-			Spread your species via the biome map
-			</li>
-			<li>
-			Review and plan future actions by looking at population simulation results and graphs
-			</li>
-			<li>
-			Learn the basics of the game with a light interactive tutorial
-			</li>
-		</ul>
-		
-		<p>
-		The major goals of Thrive are to create engaging, compelling gameplay that respects our players’ intelligence, and remain as accurate as possible in our depiction of known scientific theory without compromising the former. Thrive is an open-source project, and anyone with game development skill is welcome to join our team. The game uses the open-source Godot engine with the C# programming language.
-		</p>
-		
-		<p>
-		If you don't have game development skills, you are still welcome to join our fan community. We would love to have you along for the long ride! 
-		</p>
-	</description>
-
-	<categories>
-		<category>Game</category>
-		<category>Simulation</category>
-	</categories>
-
-	<keywords>
-		<keyword>Spore</keyword>
-		<keyword>Thrive</keyword>
-	</keywords>
-
-	<url type="homepage">https://www.revolutionarygamesstudio.com/</url>
-	<url type="bugtracker">https://github.com/Revolutionary-Games/Thrive/issues</url>
-	<url type="faq">https://www.revolutionarygamesstudio.com/faq</url>
-	<url type="help">https://wiki.revolutionarygamesstudio.com/wiki/Main_Page</url>
-	<url type="donation">https://www.patreon.com/thrivegame</url>
-	<url type="translate">https://github.com/Revolutionary-Games/Thrive/blob/master/doc/working_with_translations.md</url>
-	<url type="vcs-browser">https://github.com/Revolutionary-Games/Thrive</url>
-	<url type="contribute">https://github.com/Revolutionary-Games/Thrive#getting-involved</url>
-	
-	<launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
-
-	<releases>
-		<release version="2.4.0" date="2026-11-18">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.4.0</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added an option to select which GPU Thrive should use when running in normal Vulkan mode</li>
-				<li>Updated Avalonia to version 12.1.6</li>
-				<li>Updated bundled 7-zip version to 26.06 to resolve security vulnerabilities</li>
-				<li>There's now separate 7-zip executables for ARM and x86 Macs, and the Linux version is a statically linked one now</li>
-				<li>Fixed older beta versions not being deletable in the list of Thrive folders if all beta versions were not shown</li>
-				<li>The launcher now clears crash dumps when starting Thrive so that outdated crash dumps cannot exist as people occasionally reported old crash dumps accidentally</li>
-				<li>Removed the option to select "latest" DevBuild as it was a confusing option</li>
-				<li>Removed the soon expiring production certificate 1 and added certificate 3</li>
-				<li>Due to font problems many languages had been started but never put into the launcher as selectable. However something has fixed missing fallback fonts so now we have a lot of new Launcher languages all at once to select: Vietnamese, Hebrew, Chinese, Arabic, and Japanese.</li>
-				<li>Added a new language: Slovakian</li>
-				<li>Updated NLog and other dependencies to latest versions</li>
-				<li>Updated code checking tools and fixed new problems found by them</li>
-				<li>Fixed a few places where the code wasn't explicit about which culture to use for formatting</li>
-				<li>Fixed the setup script to prefer the new ImageMagick name on Linux</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.3.2" date="2026-07-23">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.2</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Removed the dependency on godotpcktool executable and now instead this uses a pure C# implementation of the feature</li>
-				<li>Added a feature to specify LD_PRELOAD for Thrive on Linux which should allow Harmony-based mods to work but this is not fully verified</li>
-				<li>There is no longer a command prompt window that opens on Windows for a little bit when playing a devbuild</li>
-				<li>Updated code checking tools and test SDK</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.3.1" date="2026-07-14">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.1</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Updated included godotpcktool version to 2.3 which now supports Godot 4.7</li>
-				<li>Playing a devbuild makes the game output have a striped background to make it really obvious when playing a devbuild</li>
-				<li>Added pagination buttons to browse the list of available devbuilds forwards and backwards</li>
-				<li>Fixed the version selector and installed version sizes not reacting to changing the launcher language</li>
-				<li>Updated Avalonia to 12.1.0</li>
-				<li>Updated other dependencies</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.3.0" date="2026-05-15">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.0</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Updated Avalonia to 12</li>
-				<li>Updated to .NET 10</li>
-				<li>Added new warning when trying to report a really old crash</li>
-				<li>Global memory allocation failure error was adjusted (it should not be able to prevent the launcher from starting, but please report if it still manages to do that)</li>
-				<li>Updated Avalonia to 11.3.6</li>
-				<li>Updated other dependencies</li>
-				<li>New language: Danish</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.2.1" date="2025-09-25">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.1</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added compatibility for rehydrating builds using Godot 4.5</li>
-				<li>Updated Avalonia to 11.3.6</li>
-				<li>Updated other dependencies</li>
-				<li>New language: Alemannic</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.2.0" date="2025-05-14">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.0</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added an option to disable Thrive mods when starting</li>
-				<li>Selecting a DevBuild / hash now selects that to be played automatically in the version selector</li>
-				<li>Updated Avalonia to 11.3.0</li>
-				<li>Updated to .NET 9</li>
-				<li>Updated bundled 7-zip to latest version and switched Mac and Linux to use the official 7-zip instead of p7zip</li>
-				<li>Added an option to prefer system-installed tools instead of bundled which may help if the bundled tools have a problem on some computers</li>
-				<li>Updated the list of links in the launcher to reflect our latest social media accounts</li>
-				<li>Fixed printing sensitive tokens on settings reset to logs</li>
-				<li>Removed Avalonia window activation workaround when launcher pops back up</li>
-				<li>Updated various dependencies like the logging and testing libraries</li>
-				<li>Updated our build scripts to add proper signing support</li>
-				<li>Did some code cleanup and removed some old data</li>
-				<li>New language: Georgian</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.5" date="2024-04-29">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.5</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added check in the launcher for required SSE 4.2 instructions support to be able to show a warning before even trying to start Thrive</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.4" date="2024-04-24">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.4</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added support for detecting successful Thrive startup with a start status file written by new Thrive versions</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.3" date="2024-04-18">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.3</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Updated OpenGL forcing option to work with Godot 4</li>
-				<li>Added new option to increase game audio latency which may help with audio crackling</li>
-				<li>Switched how result paths from folder selector dialogs are handled to hopefully fix a problem where a "file://" prefix was sometimes included causing prob</li>
-				<li>Tried to fix a rare incorrect handling of game output messages that lead to launcher crash</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.2" date="2024-03-21">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.2</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Updated devbuilds system and bundled godotpcktool to support Godot 4 based Thrive versions</li>
-				<li>Launcher quit now always ensures the background watcher task will also quit, which should allow the launcher to more reliably quit for example due to starting auto update</li>
-				<li>Updated Avalonia from 11.0.7 to 11.0.10</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.1" date="2024-02-21">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.1</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added a button in the launcher options to exit the launcher for use cases where the window title bar is not visible.</li>
-				<li>New language: Croatian (please help us translate on our translations site, the translation was created by a community member but no actual translations were done yet)</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.1.0" date="2024-01-22">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.0</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Fixed crash when latest Thrive version is not available for current platform (this caused the launcher to immediately crash on mac)</li>
-				<li>Added thread synchronization for play message display to try to fix a rare crash</li>
-				<li>Temporary download files are now kept in the launcher data folder to ensure temp filesystems with limited space don't cause issues. There's a new system for the launcher to clean its own old temporary files when starting.</li>
-				<li>Local crash dumps are now always deleted after reporting a crash</li>
-				<li>Crash reporter no longer auto selects log files if reporting non-latest crash</li>
-				<li>Recent crashes now show the time since the crash instead of the full date and time</li>
-				<li>Crash reporter now shows an explicit message if the list of crashes is empty, instead of being completely empty</li>
-				<li>DevCenter connection now properly shows connecting text when the connection is being checked</li>
-				<li>Improved the visual spacing around the installed version folder size</li>
-				<li>The rehydrator component now deletes files with bad hashes instead of leaving them</li>
-				<li>Updated to Avalonia 11 and .NET 8</li>
-				<li>New languages: Dutch, Czech, Macedonian, and Lithuanian</li>
-				<li>Updated translations</li>
-				<li>Updated dependency versions, switched from Moq to NSubstitute</li>
-				<li>Improved launcher packaging scripts</li>
-				<li>Some internal code structure improvements</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.0.3" date="2023-01-04">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.3</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Fixed issues in launcher startup language detection</li>
-				<li>Updated bundled in godotpcktool version</li>
-				<li>Copying game output now also copies the played version</li>
-				<li>Startup fail advice suppression time is now much longer to make sure it is more reliably shown. The fail advice is now suppressed if Thrive reported that it was requested to close by the user.</li>
-				<li>Launcher version update checking version number comparison failure now shows a failure popup</li>
-				<li>The default logging level is now info with a new command line flag allowing exact tweaking of logging level</li>
-				<li>There is now an option in the launcher options to turn on verbose logging</li>
-				<li>Detected crash dumps advice can now be localized</li>
-				<li>New language: Italian (note, no translation work has been done yet, you can help on our translations website)</li>
-				<li>Updated translations</li>
-				<li>Updated dependency versions</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.0.2" date="2022-12-15">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.2</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Downloaded bytes display now always shows 2 decimals for more stable displaying</li>
-				<li>Put some overtly verbose log messages to the trace level to not spam log files so hard</li>
-				<li>Added the same code checking tools we use for Thrive to this project and corrected the resulting warnings</li>
-				<li>Fixed wrong name used for Swedish locale</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.0.1" date="2022-12-08">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.1</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Added contextual explanations to some of the launcher options as to why they are disabled</li>
-				<li>Added a guard against invalid locale name breaking the launcher</li>
-				<li>Added a button to clear the remembered (last played) version</li>
-				<li>Background task errors are now properly handled and a warning popup is now shown to the user</li>
-				<li>Fixed "no compatible Thrive versions found" warning popping up when it shouldn't</li>
-				<li>Fixed Ukrainian locale being attempted to be loaded with the wrong name</li>
-				<li>Fixed the initial launcher running causing settings to immediately change due to default language</li>
-				<li>Fixed the reset all settings button not resetting the launcher language correctly</li>
-				<li>Fixed the playing popup title being unset if the launcher window was reopened after Thrive was ran</li>
-				<li>Print the message about waiting for child process to exit once per minute</li>
-				<li>Seamless mode option is now correctly only shown when the launcher is a store version</li>
-				<li>Did some code cleanup and removed TODOs that were already done</li>
-				<li>New languages: German, Romanian, Swedish, Russian</li>
-				<li>Updated translations</li>
-				</ul>
-			</description>
-		</release>
-		<release version="2.0.0" date="2022-12-03">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.0</url>
-			<description>
-				<p>Changes</p>
-				<ul>
-				<li>Reimplemented the launcher in C# using the Avalonia framework. This is a huge change so please let us know of any new bugs introduced because of this.</li>
-				<li>Various features have been slightly improved in usability</li>
-				<li>RC versions (beta) are now available through the launcher</li>
-				<li>Many bugs related to Electron should no longer happen</li>
-				<li>Electron security vulnerabilities are no longer relevant</li>
-				</ul>
-			</description>
-		</release>
-		<release version="1.3.2" date="2022-09-28"/>
-		<release version="1.3.1" date="2022-04-12">
-			<url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v1.3.1</url>
-			<description>
-				<p>New Features</p>
-				<ul>
-				<li>Added new Thrive launch option to force GLES 2 use</li>
-				<li>Added new Thrive launch option to disable all videos</li>
-				<li>Advice to try the new compatibility launch options is now shown if the game ran for just a few seconds before closing</li>
-				</ul>
-				
-				<p>Fixes</p>
-				<ul>
-				<li>Fixed wrong variable used in game crash detection causing slight problems in some cases where crash reporting should have been available</li>
-				<li>Updated dependencies (including electron) to solve some security vulnerabilities</li>
-				</ul>
-			</description>
-		</release>
-	</releases>
-
-	<requires>
-		<control>keyboard</control>
-		<control>pointing</control>
-	</requires>
-	<recommends>
-		<memory>4096</memory>	
-	</recommends>
-
-	<project_license>GPL-3.0-or-later</project_license>
-
-	<developer_name>Revolutionary Games Studio</developer_name>
-	
-	<screenshots>
-		<screenshot type="default">
-			<image>
-			https://cdn.akamai.steamstatic.com/steam/apps/1779200/ss_f86d5ba4b83b9d3c4be45e5d5a002804e338aa75.1920x1080.jpg?t=1701950740
-			</image>
-		</screenshot>
-		<screenshot>
-			<video container="webm" width="1920" height="1080">
-			https://cdn.cloudflare.steamstatic.com/steam/apps/256857711/movie_max_vp9.webm
-			</video>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_f86bdc54b25b550f09839fb0e99e35373f2843bf.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_3e777eeba8b3e926c0caeac2460b1392d4560fc9.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_4a2e316119e127f2d63c2a560ad61acf8ce265da.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_f8441e122070eaef35b5fb73eb217da6ec2b46c1.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_fe9dd1b714ba948a551399c28cc6d529ede060d2.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_2f6257bf1742c8686fc425813b0d4bc1736e173d.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_c016586b1701d6a079eba4b857142dc04a83555e.jpg?t=1637924091
-			</image>
-		</screenshot>
-		<screenshot>
-			<image>
-			https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_cfb3ee137b3fa52960615b5caf6aeccc0781dbc3.jpg?t=1637924091
-			</image>
-		</screenshot>
-	</screenshots>
-
-
-	<content_rating type="oars-1.1">
-		<content_attribute id="violence-cartoon">moderate</content_attribute>
-		<content_attribute id="violence-fantasy">moderate</content_attribute>
-	</content_rating>
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop-application">
+    <id>com.revolutionarygamesstudio.ThriveLauncher</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <name>Thrive</name>
+    <developer id="com.revolutionarygamesstudio">
+      <name>Revolutionary Games Studio</name>
+    </developer>
+    <summary>An evolution simulation game. Take control of your species in the environment and edit your species as a whole. Compete with other evolving species for resources on an alien planet.</summary>
+    <description>
+        <p>
+        In Thrive, you take control of an organism on an alien planet, beginning with the Last Universal Common Ancestor (LUCA). Your goal is to survive in the environment, adapt your species by adding mutations, and thrive. Other species will emerge to compete with yours. They will evolve via a population dynamics driven simulation with random mutations - you must improve and spread your species to surpass them. The success of your species depends both on your skill in surviving as an individual cell and the changes you make in the editor.
+        </p>
+        <p>
+        In the Microbe Stage, you control a single microbe or a colony of microbes bound together. You swim through a watery environment to find the resources your cell needs to stay alive and to reproduce. Once you have reproduced, you enter the editor, where you can review how well your species and others are surviving, move to new biomes, and modify your species. Add new organelles, change your membrane, and change your cell's visuals. Your goal is to become a more complex lifeform by first evolving the nucleus to become a eukaryote, then using binding agents to form cell colonies, the precursor to the first multicellular lifeforms.
+        </p>
+        <p>Current key features:</p>
+        <ul>
+            <li>Control an individual member of your species and survive the environment</li>
+            <li>Predate on other species, use photosynsthesis or scavenge for resources</li>
+            <li>Edit your species to make it more successful</li>
+            <li>Compete with other species emerging on your planet via an evolution simulation</li>
+            <li>Explore different biomes</li>
+            <li>Fight other cells with multiple cellular level weapons</li>
+            <li>Try different gameplay styles by specializing in different energy sources in subsequent playthroughs</li>
+            <li>Learn about biology by using real compounds, organelles or parts inspired by real science</li>
+            <li>Spread your species via the biome map</li>
+            <li>Review and plan future actions by looking at population simulation results and graphs</li>
+            <li>Learn the basics of the game with a light interactive tutorial</li>
+        </ul>
+        <p>
+        The major goals of Thrive are to create engaging, compelling gameplay that respects our players’ intelligence, and remain as accurate as possible in our depiction of known scientific theory without compromising the former. Thrive is an open-source project, and anyone with game development skill is welcome to join our team. The game uses the open-source Godot engine with the C# programming language.
+        </p>
+        <p>
+        If you don't have game development skills, you are still welcome to join our fan community. We would love to have you along for the long ride! 
+        </p>
+    </description>
+    <url type="homepage">https://www.revolutionarygamesstudio.com/</url>
+    <url type="bugtracker">https://github.com/Revolutionary-Games/Thrive/issues</url>
+    <url type="faq">https://www.revolutionarygamesstudio.com/faq</url>
+    <url type="help">https://wiki.revolutionarygamesstudio.com/wiki/Main_Page</url>
+    <url type="donation">https://www.patreon.com/thrivegame</url>
+    <url type="translate">https://github.com/Revolutionary-Games/Thrive/blob/master/doc/working_with_translations.md</url>
+    <url type="vcs-browser">https://github.com/Revolutionary-Games/Thrive</url>
+    <url type="contribute">https://github.com/Revolutionary-Games/Thrive#getting-involved</url>
+    <launchable type="desktop-id">com.revolutionarygamesstudio.ThriveLauncher.desktop</launchable>
+    <requires>
+        <control>keyboard</control>
+        <control>pointing</control>
+    </requires>
+    <recommends>
+        <memory>4096</memory>
+    </recommends>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">moderate</content_attribute>
+        <content_attribute id="violence-fantasy">moderate</content_attribute>
+    </content_rating>
+    <categories>
+        <category>Game</category>
+        <category>Simulation</category>
+    </categories>
+    <keywords>
+        <keyword>Spore</keyword>
+        <keyword>Thrive</keyword>
+    </keywords>
+    <screenshots>
+        <screenshot type="default">
+            <image>
+            https://cdn.akamai.steamstatic.com/steam/apps/1779200/ss_f86d5ba4b83b9d3c4be45e5d5a002804e338aa75.1920x1080.jpg?t=1701950740
+            </image>
+        </screenshot>
+        <screenshot>
+            <video container="webm" width="1920" height="1080">
+            https://cdn.cloudflare.steamstatic.com/steam/apps/256857711/movie_max_vp9.webm
+            </video>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_f86bdc54b25b550f09839fb0e99e35373f2843bf.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_3e777eeba8b3e926c0caeac2460b1392d4560fc9.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_4a2e316119e127f2d63c2a560ad61acf8ce265da.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_f8441e122070eaef35b5fb73eb217da6ec2b46c1.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_fe9dd1b714ba948a551399c28cc6d529ede060d2.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_2f6257bf1742c8686fc425813b0d4bc1736e173d.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_c016586b1701d6a079eba4b857142dc04a83555e.jpg?t=1637924091
+            </image>
+        </screenshot>
+        <screenshot>
+            <image>
+            https://cdn.cloudflare.steamstatic.com/steam/apps/1779200/ss_cfb3ee137b3fa52960615b5caf6aeccc0781dbc3.jpg?t=1637924091
+            </image>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="2.4.0" date="2026-11-18">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.4.0</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added an option to select which GPU Thrive should use when running in normal Vulkan mode</li>
+                    <li>Updated Avalonia to version 12.1.6</li>
+                    <li>Updated bundled 7-zip version to 26.06 to resolve security vulnerabilities</li>
+                    <li>There's now separate 7-zip executables for ARM and x86 Macs, and the Linux version is a statically linked one now</li>
+                    <li>Fixed older beta versions not being deletable in the list of Thrive folders if all beta versions were not shown</li>
+                    <li>The launcher now clears crash dumps when starting Thrive so that outdated crash dumps cannot exist as people occasionally reported old crash dumps accidentally</li>
+                    <li>Removed the option to select "latest" DevBuild as it was a confusing option</li>
+                    <li>Removed the soon expiring production certificate 1 and added certificate 3</li>
+                    <li>Due to font problems many languages had been started but never put into the launcher as selectable. However something has fixed missing fallback fonts so now we have a lot of new Launcher languages all at once to select: Vietnamese, Hebrew, Chinese, Arabic, and Japanese.</li>
+                    <li>Added a new language: Slovakian</li>
+                    <li>Updated NLog and other dependencies to latest versions</li>
+                    <li>Updated code checking tools and fixed new problems found by them</li>
+                    <li>Fixed a few places where the code wasn't explicit about which culture to use for formatting</li>
+                    <li>Fixed the setup script to prefer the new ImageMagick name on Linux</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.3.2" date="2026-07-23">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.2</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Removed the dependency on godotpcktool executable and now instead this uses a pure C# implementation of the feature</li>
+                    <li>Added a feature to specify LD_PRELOAD for Thrive on Linux which should allow Harmony-based mods to work but this is not fully verified</li>
+                    <li>There is no longer a command prompt window that opens on Windows for a little bit when playing a devbuild</li>
+                    <li>Updated code checking tools and test SDK</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.3.1" date="2026-07-14">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.1</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Updated included godotpcktool version to 2.3 which now supports Godot 4.7</li>
+                    <li>Playing a devbuild makes the game output have a striped background to make it really obvious when playing a devbuild</li>
+                    <li>Added pagination buttons to browse the list of available devbuilds forwards and backwards</li>
+                    <li>Fixed the version selector and installed version sizes not reacting to changing the launcher language</li>
+                    <li>Updated Avalonia to 12.1.0</li>
+                    <li>Updated other dependencies</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.3.0" date="2026-05-15">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.3.0</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Updated Avalonia to 12</li>
+                    <li>Updated to .NET 10</li>
+                    <li>Added new warning when trying to report a really old crash</li>
+                    <li>Global memory allocation failure error was adjusted (it should not be able to prevent the launcher from starting, but please report if it still manages to do that)</li>
+                    <li>Updated Avalonia to 11.3.6</li>
+                    <li>Updated other dependencies</li>
+                    <li>New language: Danish</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.2.1" date="2025-09-25">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.1</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added compatibility for rehydrating builds using Godot 4.5</li>
+                    <li>Updated Avalonia to 11.3.6</li>
+                    <li>Updated other dependencies</li>
+                    <li>New language: Alemannic</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.2.0" date="2025-05-14">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.2.0</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added an option to disable Thrive mods when starting</li>
+                    <li>Selecting a DevBuild / hash now selects that to be played automatically in the version selector</li>
+                    <li>Updated Avalonia to 11.3.0</li>
+                    <li>Updated to .NET 9</li>
+                    <li>Updated bundled 7-zip to latest version and switched Mac and Linux to use the official 7-zip instead of p7zip</li>
+                    <li>Added an option to prefer system-installed tools instead of bundled which may help if the bundled tools have a problem on some computers</li>
+                    <li>Updated the list of links in the launcher to reflect our latest social media accounts</li>
+                    <li>Fixed printing sensitive tokens on settings reset to logs</li>
+                    <li>Removed Avalonia window activation workaround when launcher pops back up</li>
+                    <li>Updated various dependencies like the logging and testing libraries</li>
+                    <li>Updated our build scripts to add proper signing support</li>
+                    <li>Did some code cleanup and removed some old data</li>
+                    <li>New language: Georgian</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.5" date="2024-04-29">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.5</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added check in the launcher for required SSE 4.2 instructions support to be able to show a warning before even trying to start Thrive</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.4" date="2024-04-24">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.4</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added support for detecting successful Thrive startup with a start status file written by new Thrive versions</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.3" date="2024-04-18">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.3</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Updated OpenGL forcing option to work with Godot 4</li>
+                    <li>Added new option to increase game audio latency which may help with audio crackling</li>
+                    <li>Switched how result paths from folder selector dialogs are handled to hopefully fix a problem where a "file://" prefix was sometimes included causing prob</li>
+                    <li>Tried to fix a rare incorrect handling of game output messages that lead to launcher crash</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.2" date="2024-03-21">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.2</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Updated devbuilds system and bundled godotpcktool to support Godot 4 based Thrive versions</li>
+                    <li>Launcher quit now always ensures the background watcher task will also quit, which should allow the launcher to more reliably quit for example due to starting auto update</li>
+                    <li>Updated Avalonia from 11.0.7 to 11.0.10</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.1" date="2024-02-21">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.1</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added a button in the launcher options to exit the launcher for use cases where the window title bar is not visible.</li>
+                    <li>New language: Croatian (please help us translate on our translations site, the translation was created by a community member but no actual translations were done yet)</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.1.0" date="2024-01-22">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.1.0</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Fixed crash when latest Thrive version is not available for current platform (this caused the launcher to immediately crash on mac)</li>
+                    <li>Added thread synchronization for play message display to try to fix a rare crash</li>
+                    <li>Temporary download files are now kept in the launcher data folder to ensure temp filesystems with limited space don't cause issues. There's a new system for the launcher to clean its own old temporary files when starting.</li>
+                    <li>Local crash dumps are now always deleted after reporting a crash</li>
+                    <li>Crash reporter no longer auto selects log files if reporting non-latest crash</li>
+                    <li>Recent crashes now show the time since the crash instead of the full date and time</li>
+                    <li>Crash reporter now shows an explicit message if the list of crashes is empty, instead of being completely empty</li>
+                    <li>DevCenter connection now properly shows connecting text when the connection is being checked</li>
+                    <li>Improved the visual spacing around the installed version folder size</li>
+                    <li>The rehydrator component now deletes files with bad hashes instead of leaving them</li>
+                    <li>Updated to Avalonia 11 and .NET 8</li>
+                    <li>New languages: Dutch, Czech, Macedonian, and Lithuanian</li>
+                    <li>Updated translations</li>
+                    <li>Updated dependency versions, switched from Moq to NSubstitute</li>
+                    <li>Improved launcher packaging scripts</li>
+                    <li>Some internal code structure improvements</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.0.3" date="2023-01-04">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.3</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Fixed issues in launcher startup language detection</li>
+                    <li>Updated bundled in godotpcktool version</li>
+                    <li>Copying game output now also copies the played version</li>
+                    <li>Startup fail advice suppression time is now much longer to make sure it is more reliably shown. The fail advice is now suppressed if Thrive reported that it was requested to close by the user.</li>
+                    <li>Launcher version update checking version number comparison failure now shows a failure popup</li>
+                    <li>The default logging level is now info with a new command line flag allowing exact tweaking of logging level</li>
+                    <li>There is now an option in the launcher options to turn on verbose logging</li>
+                    <li>Detected crash dumps advice can now be localized</li>
+                    <li>New language: Italian (note, no translation work has been done yet, you can help on our translations website)</li>
+                    <li>Updated translations</li>
+                    <li>Updated dependency versions</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.0.2" date="2022-12-15">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.2</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Downloaded bytes display now always shows 2 decimals for more stable displaying</li>
+                    <li>Put some overtly verbose log messages to the trace level to not spam log files so hard</li>
+                    <li>Added the same code checking tools we use for Thrive to this project and corrected the resulting warnings</li>
+                    <li>Fixed wrong name used for Swedish locale</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.0.1" date="2022-12-08">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.1</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Added contextual explanations to some of the launcher options as to why they are disabled</li>
+                    <li>Added a guard against invalid locale name breaking the launcher</li>
+                    <li>Added a button to clear the remembered (last played) version</li>
+                    <li>Background task errors are now properly handled and a warning popup is now shown to the user</li>
+                    <li>Fixed "no compatible Thrive versions found" warning popping up when it shouldn't</li>
+                    <li>Fixed Ukrainian locale being attempted to be loaded with the wrong name</li>
+                    <li>Fixed the initial launcher running causing settings to immediately change due to default language</li>
+                    <li>Fixed the reset all settings button not resetting the launcher language correctly</li>
+                    <li>Fixed the playing popup title being unset if the launcher window was reopened after Thrive was ran</li>
+                    <li>Print the message about waiting for child process to exit once per minute</li>
+                    <li>Seamless mode option is now correctly only shown when the launcher is a store version</li>
+                    <li>Did some code cleanup and removed TODOs that were already done</li>
+                    <li>New languages: German, Romanian, Swedish, Russian</li>
+                    <li>Updated translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.0.0" date="2022-12-03">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v2.0.0</url>
+            <description>
+                <p>Changes</p>
+                <ul>
+                    <li>Reimplemented the launcher in C# using the Avalonia framework. This is a huge change so please let us know of any new bugs introduced because of this.</li>
+                    <li>Various features have been slightly improved in usability</li>
+                    <li>RC versions (beta) are now available through the launcher</li>
+                    <li>Many bugs related to Electron should no longer happen</li>
+                    <li>Electron security vulnerabilities are no longer relevant</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.3.2" date="2022-09-28" />
+        <release version="1.3.1" date="2022-04-12">
+            <url>https://github.com/Revolutionary-Games/Thrive-Launcher/releases/tag/v1.3.1</url>
+            <description>
+                <p>New Features</p>
+                <ul>
+                    <li>Added new Thrive launch option to force GLES 2 use</li>
+                    <li>Added new Thrive launch option to disable all videos</li>
+                    <li>Advice to try the new compatibility launch options is now shown if the game ran for just a few seconds before closing</li>
+                </ul>
+                <p>Fixes</p>
+                <ul>
+                    <li>Fixed wrong variable used in game crash detection causing slight problems in some cases where crash reporting should have been available</li>
+                    <li>Updated dependencies (including electron) to solve some security vulnerabilities</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
 </component>
